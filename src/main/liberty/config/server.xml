@@ -1,0 +1,26 @@
+<server description="Sample Servlet server">
+	<featureManager>
+		<feature>servlet-4.0</feature>
+		<feature>jndi-1.0</feature>
+		<feature>cdi-2.0</feature>
+		<feature>mpHealth-3.1</feature>
+		<feature>mpConfig-2.0</feature>
+		<feature>jaxb-2.2</feature>
+	</featureManager>
+
+	<variable name="default.http.port" defaultValue="9080" />
+	<variable name="default.https.port" defaultValue="9443" />
+	<variable name="app.context.root" defaultValue="/" />
+
+	<library id="log4jConfig">
+		<folder dir="." scanInterval="5s" />
+	</library>
+
+	<httpEndpoint httpPort="${default.http.port}"
+		httpsPort="${default.https.port}" id="defaultHttpEndpoint" host="*" />
+	<webApplication id="conceptual-art"
+		location="conceptual-art.war" contextRoot="${app.context.root}" />
+	<httpDispatcher enableWelcomePage="false"></httpDispatcher>
+
+	<jndiEntry jndiName="application-name" value="conceptual-art" />
+</server>
