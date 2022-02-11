@@ -41,5 +41,8 @@ buildNumber.properties
 .settings/
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
-
+.tern-project
 /bin/
+
+node_modules/
+
